@@ -4,8 +4,6 @@ pipeline {
         stage('clone from repo') { 
             steps {
                 // 
-                sh "rm -rf ipmitool/"
-                sh "git clone https://github.com/brendenlai/ipmitool.git"
                 sh "echo clone from repo"
             }
         }
