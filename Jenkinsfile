@@ -1,4 +1,7 @@
 pipeline {
+	def server
+	def uploadSpec 
+	def buildInfo1
     agent any 
     stages {
         
@@ -15,12 +18,12 @@ pipeline {
             steps {
                 // 
                 sh "echo Deploying .... "
-                def server = Artifactory.server SERVER_ID
+                server = Artifactory.server SERVER_ID
 
 				// Read the upload spec which was downloaded from github.
-				def uploadSpec = readFile 'resources/ipmitool-upload.json'
+				uploadSpec = readFile 'resources/ipmitool-upload.json'
 				// Upload to Artifactory.
-				def buildInfo1 = server.upload spec: uploadSpec       
+				buildInfo1 = server.upload spec: uploadSpec       
 				// Publish the build to Artifactory
 				server.publishBuildInfo buildInfo1
             }
