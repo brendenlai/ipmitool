@@ -28,7 +28,7 @@ node {
 		
 
 		// Read the upload spec which was downloaded from github.
-		uploadSpec = readFile 'resources/ipmitool-upload.json'
+		uploadSpec = readFile 'resource/ipmitool-upload.json'
 		// Upload to Artifactory.
 		buildInfo1 = server.upload spec: uploadSpec       
 		// Publish the build to Artifactory
