@@ -1,10 +1,16 @@
 node {
-	git url: 'https://github.com/brendenlai/ipmitool.git'
-	def server
+	
+	def server = Artifactory.server SERVER_ID;
 	def uploadSpec 
 	def buildInfo1
     agent any 
     
+    stage('Clone'){ 
+		steps {
+			// 
+			git url: 'https://github.com/brendenlai/ipmitool.git'
+		}
+	}
         
 	stage('Build') { 
 		steps {
@@ -19,7 +25,7 @@ node {
 		steps {
 			// 
 			sh "echo Deploying .... "
-			server = Artifactory.server SERVER_ID
+			
 
 			// Read the upload spec which was downloaded from github.
 			uploadSpec = readFile 'resources/ipmitool-upload.json'
