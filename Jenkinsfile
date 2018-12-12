@@ -1,6 +1,8 @@
 node {
 	
-	def server = Artifactory.server SERVER_ID;
+	//def server = Artifactory.server SERVER_ID;
+	//http://localhost:8081/artifactory
+	def server = Artifactory.newServer url: 'http://localhost:8081/artifactory', username: 'admin', password: '1234'
 	def uploadSpec 
 	def buildInfo1
   //  agent any 
