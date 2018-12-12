@@ -1,5 +1,5 @@
 node {
-	git url: 'https://github.com/brendenlai/Artifactory.git'
+	git url: 'https://github.com/brendenlai/ipmitool.git'
 	def server
 	def uploadSpec 
 	def buildInfo1
