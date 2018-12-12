@@ -3,7 +3,7 @@ node {
 	def server = Artifactory.server SERVER_ID;
 	def uploadSpec 
 	def buildInfo1
-    agent any 
+  //  agent any 
     
     stage('Clone'){ 
 		steps {
