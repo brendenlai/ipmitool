@@ -38,5 +38,12 @@ node {
 		server.publishBuildInfo buildInfo1
 
 	}
+	
+	stage('Approve') { 
+		
+		// 
+		input "Does the staging environment look ok?"
+		
+	}
    
 }
